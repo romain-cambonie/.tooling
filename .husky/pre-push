@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo 'Pre-push hook: lint, prettify and execute tests on project'
+concurrently --kill-others-on-fail "yarn:lint" "yarn:prettier:check" "yarn:test"
