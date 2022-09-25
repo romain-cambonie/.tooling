@@ -16,9 +16,15 @@ git clone git@github.com:romain-cambonie/.tooling.git
 ```
 
 ### 2. Install devDependencies
-```shell 
-yarn add -D @commitlint/cli @commitlint/config-conventional @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser 
-yarn add -D concurrently eslint eslint-config-prettier eslint-plugin-jest husky jest lint-staged prettier ts-jest ts-node typescript
+```shell
+yarn add -D typescript
+yarn add -D husky 
+yarn add -D @commitlint/cli @commitlint/config-conventional
+yarn add -D prettier
+yarn add -D @types/jest @types/node jest ts-jest ts-node
+yarn add -D concurrently
+yarn add -D eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-prettier eslint-plugin-jest
+yarn add -D lint-staged 
 ```
 
 ### 3. Install husky and set hooks as executable
@@ -29,12 +35,6 @@ mv -R ./.tooling/.husky .husky
 chmod a+x .husky/commit-msg
 chmod a+x .husky/pre-commit
 chmod a+x .husky/pre-push
-```
-
-### 4. Activate the 'validation' ci workflow
-
-```shell
-mv -R ./.tooling/.github/**/*.yml .github
 ```
 
 ### 5. Add the scripts in your package.json
