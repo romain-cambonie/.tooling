@@ -8,7 +8,7 @@ const projectsTests = [
   './../../.tsconfigs/tsconfig.test.json',
 ];
 
-const plugins = ['@typescript-eslint'];
+const pluginsWithAngular = ['@typescript-eslint', '@angular-eslint', 'rxjs', 'rxjs-angular'];
 
 // Lint project using its tsconfig.json.
 const lintProjects = () => {
@@ -17,7 +17,7 @@ const lintProjects = () => {
       extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-        //'plugin:@typescript-eslint/recommended-requiring-type-checking',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'prettier',
       ],
       files: ['**/*.ts', '**/*.tsx'],
@@ -28,10 +28,13 @@ const lintProjects = () => {
         ecmaVersion: 2020,
         sourceType: 'module'
       },
-      plugins,
+      plugins: pluginsWithAngular,
       rules: {
         ...require('./eslint.rules.cjs'),
         ...require('./typescript-eslint.rules.cjs'),
+        ...require('./angular-eslint.rules'),
+        ...require('./rxjs-eslint.rules'),
+        ...require('./rxjs-angular-eslint.rules')
       },
     },
   ];
@@ -70,6 +73,19 @@ const lintTests = () => {
   ];
 };
 
+const lintAngularTemplates = () => {
+  return [
+    {
+      files: ['*.html'],
+      parser: '@angular-eslint/template-parser',
+      plugins: ['@angular-eslint/template'],
+      rules: {
+        ...require('./angular-template-eslint.rules')
+      }
+    },
+  ];
+};
+
 module.exports = {
   root: true,
   env: {
@@ -77,5 +93,5 @@ module.exports = {
     es6: true,
     node: true,
   },
-  overrides: [...lintProjectsWithoutTests(), ...lintTests()],
+  overrides: [...lintProjectsWithoutTests(), ...lintTests(), ...lintAngularTemplates()],
 };
