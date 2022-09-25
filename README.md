@@ -15,6 +15,11 @@ Automate installation and distribute as a package ?
 git clone git@github.com:romain-cambonie/.tooling.git
 ```
 
+### Remove the git configuration
+```shell
+rm -rf ./tooling/.git
+```
+
 ### 2. Install devDependencies
 ```shell
 yarn add -D typescript
@@ -31,10 +36,13 @@ yarn add -D lint-staged
 
 ```shell
 husky install
-mv -R ./.tooling/.husky .husky
+mv ./.tooling/.husky .husky
+```
+and
+```shell
 chmod a+x .husky/commit-msg
 chmod a+x .husky/pre-commit
-chmod a+x .husky/pre-push
+chmod a+x .husky/pre-push 
 ```
 
 ### 5. Add the scripts in your package.json
