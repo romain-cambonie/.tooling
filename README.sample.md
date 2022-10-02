@@ -30,7 +30,7 @@ npm install ...
 
 ## Contribution
 
-To setup the project locally see the [contributing guide](docs/CONTRIBUTING.md)
+To setup the project locally see the [contributing guide](doc/CONTRIBUTING.md)
 
 ## Built With
 
@@ -66,4 +66,4 @@ To setup the project locally see the [contributing guide](docs/CONTRIBUTING.md)
 
 ## License
 
-See the [LICENSE.md](docs/LICENSE.md) file.
+See the [LICENSE.md](doc/LICENSE.md) file.

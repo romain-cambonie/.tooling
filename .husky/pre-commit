@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo 'Pre-commit hook: lint and prettify staged files'
+echo 'Pre-commit hook: [lint, prettier] staged files'
 yarn lint-staged

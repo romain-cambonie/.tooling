@@ -1,5 +1,5 @@
 {
-  "*.(js|ts)": "eslint --config=./.tooling/.eslint/.eslintrc.cjs",
-  "*.(md|json|yml|xml|html|css|scss|js|ts|sh)": "prettier --config=./.tooling/.prettier/.prettierrc.cjs --write",
+  "*.(js|ts|tsx)": "eslint --config=./.tooling/.eslint/.eslintrc.cjs",
+  "*.(md|json|yml|xml|html|css|scss|js|ts|tsx|sh)": "prettier --config=./.tooling/.prettier/.prettierrc.cjs --write",
 }
 
