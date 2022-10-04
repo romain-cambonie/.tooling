@@ -68,6 +68,12 @@ chmod a+x .husky/pre-commit
 chmod a+x .husky/pre-push 
 ```
 
+### 4. Get .editorconfig 
+
+```shell
+mv ./.tooling/.editorconfig .editorconfig
+```
+
 ### 5. Add the scripts in your package.json
 ```json
 {
